@@ -1,0 +1,3 @@
+[submodule "gearsloth"]
+	path = gearsloth
+	url = https://github.com/meetings/gearsloth
