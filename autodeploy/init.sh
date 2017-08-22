@@ -1,0 +1,18 @@
+#!/bin/sh
+# init.sh, 2013-12-05 Tuomas Starck / Meetin.gs
+#
+# Autodeployment (version 2) init hook for
+# generic Node.js service initialization.
+
+set -u
+
+. $DEPLOYDIR/service.sh
+
+echo " *** init: Initializing npm config and modules"
+cd gearsloth
+npm config set prefix $PREFIX --global
+npm install --production 2> /dev/null
+npm link --production
+cd ..
+
+setup_service "init"
