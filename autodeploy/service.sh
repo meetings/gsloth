@@ -11,9 +11,7 @@ setup_service() {
   TAG=${1:-srv}
 
   echo " *** $TAG: Setting up service configuration"
-  cd gearsloth
   install -m 0644 -p $DEPLOYDIR/$INTENT.conf /etc/init/
-  cd ..
 
   echo " *** $TAG: Starting service"
   service $INTENT restart
